@@ -1,7 +1,9 @@
-import React,{useState} from "react";
-
+import React,{useEffect, useState} from "react";
+import {useDispatch} from 'react-redux'
+import { getQues } from "../store/chatSlice";
 function Chat_Ask()
 {
+  const dispatch=useDispatch();
     const [ques,setQues]=useState([]);
   const [currQues,setCurrQues]=useState('write here');
   function handleClick(){
@@ -9,6 +11,10 @@ function Chat_Ask()
     console.log()
     // setCurrQues('write here');
   }
+  useEffect(()=>{
+    const data=currQues;
+    dispatch(getQues({data}))
+  },[ques])
     return (
 <div className="basis-2/4 bg-gray-200 h-auto mx-10">
     <h2>Ask Bro</h2>
@@ -20,7 +26,7 @@ function Chat_Ask()
     </div> */}
 
 <div className="absolute flex flex-col bottom-28 container bg-green-200 w-4/5 px-5 my-2  mx-5">
-    {(ques.length!=0)? ques.slice(0).map((item,idx)=>{ console.log(idx,28+(4*(idx+1)));return <p className={` basis-2/3 space-y-8 bg-yellow-200 mx-auto h-fit w-fit my-2`}>{item}</p>}) :<p></p>}
+    {(ques.length!=0)? ques.slice(0).map((item,idx)=>{ console.log(idx,28+(4*(idx+1)));return <p key={idx} className={` basis-2/3 space-y-8 bg-yellow-200 mx-auto h-fit w-fit my-2`}>{item}</p>}) :<p></p>}
     </div>
 
 

@@ -1,6 +1,8 @@
 import React, { Children } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import store from './store/store.js'
+import {Provider} from 'react-redux'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 // import {Bro_Chat,Bro_Solver,Bro_Translate} from '../Pages/index.js'
@@ -72,7 +74,10 @@ const router=createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
+    <Provider store={store}>
     <RouterProvider router={router} />
+    </Provider>
+    {/* <App /> */}
+   
   </React.StrictMode>,
 )
