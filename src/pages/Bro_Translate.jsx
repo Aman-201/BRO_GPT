@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text_Box, Dropdown } from "../components";
 import axios  from "axios";
+import configs from "../config/configs";
 
 function Bro_Translate(){
     const [text1,setText1]=useState('');
@@ -24,13 +25,15 @@ function Bro_Translate(){
             encodedParams.set('target', lang2);
             encodedParams.set('source', lang1);
             console.log("inside async")
+            // console.log("api key----",configs.rapidApiKey)
+
             const options = {
                 method: 'POST',
                 url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
                 headers: {
                   'content-type': 'application/x-www-form-urlencoded',
                 //   'Accept-Encoding': 'application/gzip',
-                  'X-RapidAPI-Key': 'b071a80281msh4e858eac5397583p1a2b2bjsn394d985eff49',
+                  'X-RapidAPI-Key': configs.rapidApiKey,
                   'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
                 },
                 data: encodedParams,
