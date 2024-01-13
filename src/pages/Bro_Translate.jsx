@@ -88,15 +88,15 @@ function Bro_Translate(){
     }
     },[lang1,lang2])
 return (
-    <div>
-        <h1>Welcome to bro translator</h1>
-        <div>
+    <div className=" h-screen bg-sky-500">
+        <h1 className="bg-cyan-900 rounded-3xl w-3/5 text-cyan-200 text-lime-200 mx-auto relative top-6 font-sans text-3xl py-8">Welcome to bro translator</h1>
+        <div className="relative top-12">
            <Text_Box text_data={text1} setTextData={setText1}/>
         </div>
-        <div>
+        <div className="relative top-24">
             <span><Dropdown lang_type="source_lanuage" lang={lang1} setLang={setLang1}/></span> <span><Dropdown lang_type="target_lanuage" lang={lang2} setLang={setLang2} /></span>
         </div>
-        <div>
+        <div className="relative top-32">
         <Text_Box text_data={text2} setTextData={setText2}/>
         </div>
     </div>

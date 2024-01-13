@@ -148,20 +148,21 @@ async function fileToGenerativePart(file) {
         console.log("inside handleClick")
         aiImageRun();
     }
-    return <div>
- <h1 className="bg-indigo-500">Welcome to bro solver</h1>
- <div className="flex flex-col w-4/5 bg-yellow-200 mx-auto my-auto">
- <div className="flex flex-row w-4/5 bg-blue-200 mx-auto my-auto">
-    <textarea name="" id="" cols="30" rows="2" className="mx-2 my-2" onChange={(e)=>{console.log(e.target.value); setCaption(e.target.value)}}></textarea>
+    return <div className="h-screen bg-rose-300">
+ <h1 className="bg-rose-500 rounded-3xl w-3/5 text-rose-200 text-pink-50 mx-auto relative top-6 font-sans text-3xl py-8">Welcome to bro solver</h1>
+ <div className="flex flex-col w-4/5 relative top-20 mx-auto my-auto ">
+ <div className="flex flex-row w-full bg-rose-300 rounded-xl border border-rose-500 mx-auto my-auto">
+    <p className=" text-rose-200 text-pink-50 font-sans  mx-1">Add Caption for Image</p>
+    <textarea name="" id="" cols="30" rows="2" className="mx-2 my-2 bg-rose-300 border border-rose-500 font-sans text-pink-50" onChange={(e)=>{console.log(e.target.value); setCaption(e.target.value)}}></textarea>
     <input type="file" name="" id="" className="mx-2 my-3" onChange={(e)=>{console.log(e.target.value);console.log(e); setImgSrc(URL.createObjectURL(e.target.files[0]));handleImage(e)}} />
-    {(imgSrc)?<img src={image} className="mx-2 my-2 w-16 h-16"></img>:<p>no img</p>}
-    <button type="submit" onClick={handleClick}> get solution</button>
+    {(imgSrc)?<img src={image} className="mx-2 my-2 w-16 h-16"></img>:<p></p>}
+    <button className="rounded-full bg-rose-400 border border-rose-500 text-rose-200 font-sans" type="submit" onClick={handleClick}> get solution</button>
  </div>
 
- <div className="w-4/5 my-5 mx-auto bg-red-200">
-    <p>solver response</p>
+ <div className="w-4/5 my-5 mx-auto bg-rose-400 border border-pink-200 h-full">
+    <p className="text-rose-200 bg-rose-400 text-pink-50 font-sans border border-pink-200 w-full text-xl mx-auto rounded-lg my-3">solver response</p>
 
-{(solution!='')?<pre className="mx-auto my-auto">{solution}</pre>:''}
+{(solution!='')?<pre className="mx-auto my-auto bg-rose-400 border border-pink-200 text-rose-200 text-pink-50 rounded-lg font-sans">{solution}</pre>:''}
  </div>
  </div>
  
@@ -170,3 +171,5 @@ async function fileToGenerativePart(file) {
 
 }
 export default Bro_Solver;
+
+//todo correct the issue of overflowing of the response text from the div container

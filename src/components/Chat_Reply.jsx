@@ -7,7 +7,6 @@ function Chat_Reply()
     const ques=useSelector((state)=>{console.log("inside chat reply state value of ques is ----> ",state.ques);return state.ques})
     const [ans,setAns]=useState('');
     const [allAns,setAllAns]=useState([]);
-
     useEffect(()=>{
         let data = JSON.stringify({
             "prompt": {
@@ -43,11 +42,12 @@ function Chat_Reply()
 
 
     return (
-        <div className="basis-3/4 bg-indigo-200 h-screen">
+        <div className="basis-2/4 bg-zinc-500 border rounded-lg border-slate-400 shadow-lg">
              <h1>Bro's Reply</h1>
-             <div className="relative h-full">
-             <div className="absolute flex flex-col bottom-28 container bg-green-200 w-4/5 px-5 my-2  mx-5">
-    {(allAns.length!=0)? allAns.slice(0).map((item,idx)=>{ console.log(idx,28+(4*(idx+1)));return <p key={idx} className={` basis-2/3 space-y-8 bg-yellow-200 mx-auto h-fit w-fit my-2`}>{item}</p>}) :<p></p>}
+
+             <div className="relative h-screen bg-zinc-500 w-5/5">
+             <div className="absolute flex flex-col bottom-12 w-5/5 my-2 px-5 mx-auto text-wrap">
+    {(allAns.length!=0)? allAns.slice(0).map((item,idx)=>{ console.log(idx,28+(4*(idx+1)));return <p key={idx} className={`flex-wrap whitespace-break-spaces whitespace-pre-wrap	 font-sans border rounded-lg border-slate-400 shadow-lg text-slate-50 text-justify my-2`}>{item}</p>}) :<p></p>}
     </div>
                 </div>
              {/* <h2>{ans}</h2> */}
@@ -56,3 +56,7 @@ function Chat_Reply()
     );
 }
 export default Chat_Reply;
+
+
+
+//todo :- update the responsiveness of response space overlaping with others and /n in items(response of api)

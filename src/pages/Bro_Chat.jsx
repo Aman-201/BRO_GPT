@@ -9,7 +9,7 @@ function Bro_Chat(){
   //   // setCurrQues('write here');
   // }
 return (
-    <div className="container w-full flex flex-row my-0">
+    <div className="container  flex bg-zinc-500 flex-row my-0 mx-auto">
       <Gpt_Options />
   <Chat_Ask />
  <Chat_Reply />
