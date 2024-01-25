@@ -6,11 +6,12 @@ import {Provider} from 'react-redux'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 // import {Bro_Chat,Bro_Solver,Bro_Translate} from '../Pages/index.js'
-import Bro_Chat from './Pages/Bro_Chat.jsx'
-import Bro_Solver from './Pages/Bro_Solver.jsx'
-import Bro_Translate from './Pages/Bro_Translate.jsx'
+import {Bro_Chat,Bro_Solver,Bro_Translate,Home} from './pages/index.js'
+// import Bro_Chat from './Pages/Bro_Chat.jsx'
+// import Bro_Solver from './Pages/Bro_Solver.jsx'
+// import Bro_Translate from './Pages/Bro_Translate.jsx'
 import {Home_Button} from './components/index.jsx'
-import Home from './Pages/Home.jsx'
+// import Home from './Pages/Home.jsx'
 // const router=createBrowserRouter([
 //  { 
 //   path :'/',
